@@ -1,0 +1,33 @@
+{
+  "name": "goNode5",
+  "version": "1.0.0",
+  "description": "Tests with Jest",
+  "main": "index.js",
+  "author": "Douglas Brandão",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^7.0.0",
+    "express": "^4.16.4",
+    "faker": "^4.1.0",
+    "jsonwebtoken": "^8.5.1",
+    "nodemailer": "^6.0.0",
+    "pg": "^7.9.0",
+    "sequelize": "^5.2.11"
+  },
+  "devDependencies": {
+    "factory-girl": "^5.0.4",
+    "jest": "^24.7.1",
+    "nodemon": "^1.18.10",
+    "sequelize-cli": "^5.4.0",
+    "sqlite3": "^4.0.6",
+    "supertest": "^4.0.2"
+  },
+  "scripts": {
+    "pretest": "NODE_ENV=test sequelize db:migrate",
+    "test": "NODE_ENV=test jest",
+    "posttest": "NODE_ENV=test sequelize db:migrate:undo:all",
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js --ignore __tests__"
+  }
+}
